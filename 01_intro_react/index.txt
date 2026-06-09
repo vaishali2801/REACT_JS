@@ -1,0 +1,58 @@
+
+###what is react ?###
+->React is a front-end and open-source JavaScript library which is useful in 
+developing user interfaces specifically for applications with a single page. 
+It is helpful in building complex and reusable user interface(UI) components
+of mobile and web applications as it follows the component-based approach.
+
+The important features of React are:
+
+It supports server-side rendering.
+It will make use of the virtual DOM rather than real DOM (Data Object Model) as RealDOM manipulations are expensive.
+It follows unidirectional data binding or data flow.
+It uses reusable or composable UI components for developing the view
+
+###What are the advantages of using React?###
+
+-> Advantages of React
+Fast Performance (Virtual DOM)
+React uses a Virtual DOM, which updates only the changed parts of a webpage instead 
+of reloading the whole page.This makes websites faster and more efficient.
+
+Easy to Learn
+If you know basic HTML, CSS, and JavaScript, you can start learning React easily.
+Its syntax is simple and beginner-friendly.
+
+SEO Friendly
+React supports Server-Side Rendering (SSR), which helps search engines understand your website better.
+This can improve your website's ranking on search engines like Google.
+
+Reusable Components
+React applications are built using components (small reusable pieces of UI).
+You can create a component once and use it multiple times, saving time and effort.
+
+Large Ecosystem
+React has many libraries and tools available for routing, state management, API handling,
+and more.Developers can choose the tools that best fit their project needs.
+
+####Limitations of React####
+->Not a complete framework – Needs extra libraries.
+Learning takes time – Many concepts to understand.
+Difficult for beginners – Can be confusing at first.
+JSX can be complex – Mixes HTML and JavaScript.
+
+####What is Virtual DOM?####
+
+->Virtual DOM is a lightweight copy of the real DOM (webpage structure) stored in memory.
+
+How React Uses Virtual DOM?
+
+React creates a Virtual DOM.
+When data changes, React creates a new Virtual DOM.
+React compares the new Virtual DOM with the old one.
+Only the changed parts are updated in the real DOM.
+
+Benefit
+Faster updates
+Better performance
+Improved user experience
