@@ -3,29 +3,30 @@ import React, { useState } from 'react'
 
 const ObjectUseState_1 = () => {
 
-    const [input ,setInput] = useState({
-        name:"",
-        email:"",
-        address:""
+    const [input, setInput] = useState({
+        name: "",
+        email: "",
+        address: ""
     });
 
-    const handleChange = (field,e) =>{
-        setInput((prev)=>{
-            return{
+    const [person, setPerson] = useState([])
+
+    const handleChange = (field, e) => {
+        setInput((prev) => {
+            return {
                 ...prev,
-                [field]:e.target.value
+                [field]: e.target.value
             }
         })
     }
 
-    const handlerAdd = () =>{
-        // setInput((prev)=>({...prev,input}));
-        console.log(input);
+    const handlerAdd = () => {
+        setPerson((prev) => [...prev, input])
 
         setInput({
-            name:"",
-            email:"",
-            address:""
+            name: "",
+            email: "",
+            address: ""
         });
     }
     return (
@@ -40,6 +41,29 @@ const ObjectUseState_1 = () => {
             <br />
             <br />
             <button onClick={handlerAdd}><div>Add</div></button>
+
+            <table border={1}>
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        person.map((p,index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{p.name}</td>
+                                    <td>{p.email}</td>
+                                    <td>{p.address}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
         </>
     )
 }
