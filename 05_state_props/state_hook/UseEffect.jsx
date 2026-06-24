@@ -13,7 +13,7 @@ const UseEffect = () => {
 
                 const data = await res.json();
 
-                if(data.length == 0){
+                if(!res.ok){
                     return setError("no error");
                 }
                 setUser(data);
@@ -45,12 +45,13 @@ const UseEffect = () => {
                     <tbody>
                         {
                             user.map((u)=>{
+                                const {id,name,email,address:{street,city}} = u ;
                                 return(
-                                    <tr key={u.id}>
-                                        <td>{u.id}</td>
-                                        <td>{u.name}</td>
-                                        <td>{u.email}</td>
-                                        <td>{u.address["street"]}</td>
+                                    <tr key={id}>
+                                        <td>{id}</td>
+                                        <td>{name}</td>
+                                        <td>{email}</td>
+                                        <td>{street},{city}</td>
                                     </tr>
                                 )
                             })
