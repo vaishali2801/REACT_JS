@@ -6,6 +6,8 @@ import OnSubmit from './events/OnSubmit';
 import PassingArgument from './events/PassingArgument';
 import Conditional from './events/Conditional_01';
 import Conditional_02 from './events/Conditional_02';
+import ControlledForm from './forms/ControlledForm';
+import UncontrolledForm from './forms/UncontrolledForm';
 
 
 const App = () => {
@@ -20,8 +22,13 @@ const App = () => {
     <OnSubmit/>
     <br />
     <PassingArgument name={"vaishali"}/> */}
-    <Conditional/>
-    <Conditional_02/>
+    {/* <Conditional/> */}
+    {/* <Conditional_02/> */}
+    <h1>Controlled form</h1>
+    <ControlledForm/>
+    <br />
+    <h1>UnControlled form</h1>
+    <UncontrolledForm/>
     </>
   )
 }
