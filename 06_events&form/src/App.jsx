@@ -8,6 +8,8 @@ import Conditional from './events/Conditional_01';
 import Conditional_02 from './events/Conditional_02';
 import ControlledForm from './forms/ControlledForm';
 import UncontrolledForm from './forms/UncontrolledForm';
+import Validation_01 from './validation/Validation';
+import Formik from './validation/Formik';
 
 
 const App = () => {
@@ -24,11 +26,14 @@ const App = () => {
     <PassingArgument name={"vaishali"}/> */}
     {/* <Conditional/> */}
     {/* <Conditional_02/> */}
-    <h1>Controlled form</h1>
+    {/* <h1>Controlled form</h1>
     <ControlledForm/>
     <br />
     <h1>UnControlled form</h1>
-    <UncontrolledForm/>
+    <UncontrolledForm/> */}
+    {/* <Validation_01/> */}
+    <br />
+    <Formik/>
     </>
   )
 }
