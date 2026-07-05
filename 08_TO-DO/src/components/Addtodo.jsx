@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const AddToDo = ({ handleAdd }) => {
+const AddToDo = ({ handleAdd, editVal }) => {
+
     const [input, setInput] = useState({
         task: "",
         description: ""
     });
+
+    useEffect(() => {
+        if (editVal) {
+            setInput(editVal);
+        }
+    }, [editVal]);
+
+    // for user input 
     const handleChange = (field, e) => {
         setInput((prev) => {
             return {
@@ -14,12 +23,9 @@ const AddToDo = ({ handleAdd }) => {
         })
     }
     // console.log(input);
+    //submit function
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!input.task || !input.description) {
-            alert("Please fill all fields");
-            return;
-        }
         handleAdd(input);
         setInput({
             task: "",
@@ -30,8 +36,11 @@ const AddToDo = ({ handleAdd }) => {
         <>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='enter task' value={input.task} onChange={(e) => handleChange("task", e)} />
+                <br />
                 <input type="text" placeholder='enter description' value={input.description} onChange={(e) => handleChange("description", e)} />
-                <button type='submit'>Add</button>
+                <br />
+                <br />
+                <button type='submit'>{editVal ? "update" : "Add"}</button>
             </form>
         </>
     )
