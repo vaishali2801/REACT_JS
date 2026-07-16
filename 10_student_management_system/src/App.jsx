@@ -2,6 +2,7 @@ import React from 'react'
 // import Dummy from './utils/Dummy'
 import Student from "./components/Student";
 import MainLayout from "./routes/MainLayout";
+import "./App.css";
 
 import { createBrowserRouter ,RouterProvider} from 'react-router-dom'
 

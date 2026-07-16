@@ -1,0 +1,167 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    background:linear-gradient(90deg,#4f46e5,#2563eb)!important;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+    color:white!important;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.nav-link{
+    color:white!important;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ffe082!important;
+}
+
+.dropdown-menu{
+    border:none;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+/* ================= PAGE ================= */
+
+.student-container{
+    width:95%;
+    margin:40px auto;
+}
+
+.page-title{
+    text-align:center;
+    font-size:2rem;
+    font-weight:700;
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+.total-box{
+    width:220px;
+    background:white;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    margin-bottom:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.total-box h2{
+    color:#2563eb;
+    margin:0;
+}
+
+.total-box p{
+    margin-top:5px;
+    color:gray;
+}
+
+/* ================= TABLE ================= */
+
+.table{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.table thead{
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+    color:white;
+}
+
+.table thead th{
+    text-align:center;
+    padding:16px;
+    font-weight:600;
+    border:none;
+}
+
+.table tbody td{
+    text-align:center;
+    vertical-align:middle;
+    padding:15px;
+}
+
+.table tbody tr{
+    transition:.3s;
+}
+
+.table tbody tr:nth-child(even){
+    background:#f8fbff;
+}
+
+.table tbody tr:hover{
+    background:#dbeafe;
+    transform:scale(1.01);
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary{
+    border:none;
+    background:#2563eb;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+.btn-danger{
+    border:none;
+}
+
+/* ================= SPINNER ================= */
+
+.spinner-border{
+    width:4rem;
+    height:4rem;
+    display:block;
+    margin:120px auto;
+}
+
+/* ================= ALERT ================= */
+
+.alert{
+    width:500px;
+    margin:40px auto;
+    text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .page-title{
+        font-size:1.5rem;
+    }
+
+    .table{
+        font-size:13px;
+    }
+
+    .table thead th,
+    .table tbody td{
+        padding:10px;
+    }
+
+}
