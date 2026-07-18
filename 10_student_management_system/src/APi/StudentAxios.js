@@ -1,14 +1,13 @@
-// import axios from "axios"
-// const BASE_URL=import.meta.env.VITE_BASE_URL
+import axios from "axios"
+const BASE_URL=import.meta.env.VITE_BASE_URL
 
-// export async function getStudentByAxios(params) {
-//     try {
-//         const res = await axios(`${BASE_URL}/allStudent`);
-//         // console.log("data", data);
+export async function getStudent() {
+    try {
+        const res = await axios(`${BASE_URL}/allStudent`);
 
-//         return data.students;
+        return res.data.students;
 
-//     } catch (error) {
-//         throw new Error(error.message);
-//     }
-// }
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}

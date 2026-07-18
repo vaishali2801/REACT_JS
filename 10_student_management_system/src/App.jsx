@@ -1,10 +1,12 @@
 import React from 'react'
-// import Dummy from './utils/Dummy'
+
 import Student from "./components/Student";
 import MainLayout from "./routes/MainLayout";
+
 import "./App.css";
 
 import { createBrowserRouter ,RouterProvider} from 'react-router-dom'
+import AddStudent from './components/AddStudent';
 
 const App = () => {
   const router = createBrowserRouter([{
@@ -16,6 +18,10 @@ const App = () => {
         index:true,
         element:<Student/>
       },
+      {
+        path:"Add",
+        element:<AddStudent/>
+      }
       
     ]
   }])

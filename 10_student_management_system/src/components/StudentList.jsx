@@ -9,7 +9,6 @@ const StudentList = ({  studentData,index}) => {
                 <td>{studentData.lastName}</td>
                 <td>{studentData.email}</td>
                 <td>{studentData.phoneNumber}</td>
-                <td>{studentData.branch}</td>
                 <td>{studentData.course}</td>
             </tr>
         </>
