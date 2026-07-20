@@ -8,15 +8,23 @@ import * as yup from 'yup';
 
 //components
 import StudentValidation from '../validation/StudentValidation';
-import { AddStudents } from "../APi/StudentFetch";
+import { AddStudents, DeleteStudent } from "../APi/StudentFetch";
+// import { AddStudents } from "../APi/StudentAxios";
 
 import { useNavigate } from "react-router-dom";
-
-
 
 function AddStudent() {
     const { Formik } = formik;
     const navigate = useNavigate();
+
+    const handleDelete = async (id) => {
+        try {
+            await DeleteStudent(id);
+            handleDelete()
+        } catch (err) {
+            alert(err.message);
+        }
+    };
 
     return (
         <Formik

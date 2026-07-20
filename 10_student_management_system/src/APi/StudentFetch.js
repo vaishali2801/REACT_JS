@@ -25,15 +25,32 @@ export async function AddStudents(student) {
             body: JSON.stringify(student),
         });
 
-        const data = await res.json();
-        console.log("Response:", data);
-
         if (!res.ok) {
             throw new Error(data.message || "Failed to add student");
         }
+
+        const data = await res.json();
+        console.log("Response:", data);
+
 
         return data;
     } catch (error) {
         throw new Error(error.message);
     }
+}
+
+export async function DeleteStudent(id) {
+    try {
+        const res = await fetch(`${BASE_URL}/${id}`,{
+            method:"DELETE",
+        });
+        const data = await res.json();
+        console.log("data",data);
+        if(!res.ok){
+            throw new Error(data.message || "Failed to delete student");
+        }
+    } catch (error) {
+        throw new Error(error.message);
+    }
+    
 }

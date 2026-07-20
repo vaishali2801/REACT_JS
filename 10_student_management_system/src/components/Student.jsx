@@ -59,6 +59,11 @@ const Student = () => {
   //   );
   // }
 
+  //delete student
+  // const handleDelete = (id)=>{
+  //   setStudentData(studentData.filter((s)=>s._id !== id));
+  // }
+
   return (
     <div className="student-container">
 
@@ -79,6 +84,7 @@ const Student = () => {
             <th>Email</th>
             <th>Phone</th>
             <th>Course</th>
+            <th colSpan={2}>Action</th>
           </tr>
         </thead>
 

@@ -11,3 +11,14 @@ export async function getStudent() {
         throw new Error(error.message);
     }
 }
+
+export async function AddStudents(student) {
+    try {
+        const res = await axios.post(`${BASE_URL}/`,student);
+
+        console.log("data",res.data);
+        return res.data;
+    } catch (error) {
+    throw new Error(error.message);
+    }
+}
