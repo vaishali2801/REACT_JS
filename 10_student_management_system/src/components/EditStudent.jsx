@@ -7,28 +7,29 @@ import * as formik from 'formik';
 import * as yup from 'yup';
 
 //components
-import StudentValidation from '../validation/StudentValidation';
-import { AddStudents} from "../APi/StudentFetch";
-// import { AddStudents} from "../APi/StudentAxios";
+import { UpdateStudent } from "../APi/StudentFetch";
+// import {UpdateStudent} from "../APi/StudentAxios";
 
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-function AddStudent() {
+function EditStudent() {
     const { Formik } = formik;
     const navigate = useNavigate();
+    const { state } = useLocation();
+    const studentId = state._id;
+    if (!state) return <h3>No student data found</h3>;
 
     return (
         <Formik
-
-            validationSchema={StudentValidation}
+            validationSchema={""}
             onSubmit={async (values, { resetForm }) => {
                 try {
-                    const data = await AddStudents(values);
+                    const data = await UpdateStudent(studentId, values);
 
-                    console.log(data);
                     navigate("/");
 
-                    alert("Student Added Successfully");
+                    alert("Student edited Successfully");
 
                     resetForm();
                 } catch (err) {
@@ -36,11 +37,9 @@ function AddStudent() {
                 }
             }}
             initialValues={{
-                firstName: '',
-                lastName: '',
-                email: "",
-                phoneNumber: "",
-                course: "",
+                firstName: state?.firstName || "",
+                lastName: state?.lastName || "",
+                phoneNumber: state?.phoneNumber || "",
             }}
         >
             {({ handleSubmit, handleChange, values, touched, errors }) => (
@@ -71,21 +70,6 @@ function AddStudent() {
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} md="6" controlId="validationFormik03">
-                            <Form.Label>email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="enter email"
-                                name="email"
-                                value={values.email}
-                                onChange={handleChange}
-                                isInvalid={!!errors.email}
-                            />
-
-                            <Form.Control.Feedback type="invalid">
-                                {errors.email}
-                            </Form.Control.Feedback>
-                        </Form.Group>
                         <Form.Group as={Col} md="3" controlId="validationFormik04">
                             <Form.Label>phoneNumber</Form.Label>
                             <Form.Control
@@ -100,27 +84,12 @@ function AddStudent() {
                                 {errors.phoneNumber}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} md="3" controlId="validationFormik05">
-                            <Form.Label>course</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="enter course"
-                                name="course"
-                                value={values.course}
-                                onChange={handleChange}
-                                isInvalid={!!errors.course}
-                            />
-
-                            <Form.Control.Feedback type="invalid">
-                                {errors.course}
-                            </Form.Control.Feedback>
-                        </Form.Group>
                     </Row>
-                    <Button type="submit">Submit form</Button>
+                    <Button type="submit">Update</Button>
                 </Form>
             )}
         </Formik>
     );
 }
 
-export default AddStudent;
+export default EditStudent;

@@ -60,9 +60,26 @@ const Student = () => {
   // }
 
   //delete student
-  // const handleDelete = (id)=>{
-  //   setStudentData(studentData.filter((s)=>s._id !== id));
-  // }
+  // const handleDelete = async (id) => {
+  //   const confirmDelete = window.confirm(
+  //     "Are you sure you want to delete this student?"
+  //   );
+
+  //   if (!confirmDelete) return;
+
+  //   try {
+  //     await DeleteStudent(id);
+
+  //     // Remove student from table immediately
+  //     setStudentData((prev) =>
+  //       prev.filter((student) => student._id !== id)
+  //     );
+
+  //     alert("Student Deleted Successfully");
+  //   } catch (err) {
+  //     alert(err.message);
+  //   }
+  // };
 
   return (
     <div className="student-container">

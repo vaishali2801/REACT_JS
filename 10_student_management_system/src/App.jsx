@@ -7,6 +7,7 @@ import "./App.css";
 
 import { createBrowserRouter ,RouterProvider} from 'react-router-dom'
 import AddStudent from './components/AddStudent';
+import EditStudent from './components/EditStudent';
 
 const App = () => {
   const router = createBrowserRouter([{
@@ -21,8 +22,11 @@ const App = () => {
       {
         path:"Add",
         element:<AddStudent/>
+      },
+      {
+        path:"editStudent",
+        element:<EditStudent/>
       }
-      
     ]
   }])
   return (
