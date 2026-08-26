@@ -1,13 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchUsers = createAsyncThunk(
+export const fetchProduct = createAsyncThunk(
     "product/getAllProduct",
 
     async () => {
 
-        const res = await fetch("https://jsonplaceholder.typicode.com/users");
-        if(!res.ok){
-            return console.log("fetch product failed");
+        const res = await fetch("https://fakestoreapi.com/products");
+
+        if (!res.ok) {
+            throw new Error("Failed to fetch products");
         }
 
         const data = await res.json();
